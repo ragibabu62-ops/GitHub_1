@@ -1,9 +1,8 @@
-# This is a basic workflow to help you get started with Actions
-name: CI  
-   
+name: GitHub action workflow   
 # Controls when the workflow will run  
 on:  
   # Triggers the workflow on push or pull request events but only for the 
+"main" branch  
   push:  
     branches: [ "main" ]  
   pull_request:  
@@ -23,9 +22,8 @@ jobs:
     runs-on: ubuntu-latest  
     needs: [lint, test]  
     steps:  
-    - uses: actions/checkout@v2 
-    
-       - run:echo "Hello world"  
+      - uses: actions/checkout@v2 
+      - run: echo "Hello world"  
   test1:  
     strategy:  
       matrix:  
